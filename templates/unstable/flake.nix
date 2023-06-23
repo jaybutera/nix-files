@@ -10,6 +10,11 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
+        templates.default = {
+          path = ./.;
+          description = "Trivial setup for nixpkgs-unstable on any default system";
+          welcomeText = "";
+        };
         #defaultPackage = ;
         devShell = with pkgs; mkShell {
           buildInputs = [
